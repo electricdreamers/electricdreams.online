@@ -13,14 +13,11 @@ img.center {
 	margin-right: auto;
 }
 .hero-image {
-
-  /* Set a specific height */
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  height: 70%;
+	background-image: url("ED_lo.png");
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-position: cover;
+  	height: 100%;
 }
 video {
 	object-fit: cover;
@@ -29,4 +26,4 @@ video {
 	position: fixed;
 	top: 0;
 	left: 0;
-  }
+}
