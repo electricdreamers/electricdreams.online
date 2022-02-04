@@ -1,0 +1,32 @@
+body {
+    background-color: white;
+}
+p {
+	color: white;
+	text-align: center;
+}
+img.center {
+	display: block;
+	max-width: 71%;
+	width: 55%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.hero-image {
+
+  /* Set a specific height */
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 70%;
+}
+video {
+	object-fit: cover;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+  }
