@@ -16,19 +16,26 @@ html, body {
 .wrapper {
   position: absolute;
   top: 100%;
-  left: 50%;
-  width: 400px;
-  margin-left: -200px;
+  width: 100%;
+  margin: 0 auto;
   font: 300 30px/1 'EB Garamond', serif;
   text-align: center;
   color: #fff;
   animation: 161s credits linear 1;
+  animation-delay: 2s;
   animation-fill-mode: forwards;
 }
 
 .name {
   margin-bottom: 20px;
   font-size: 30px;
+}
+
+.bigtitle {
+  color:#ec2828;
+  margin-bottom: 20px;
+  font-size: 70px;
+  font-weight: bold;
 }
 
 .title {
