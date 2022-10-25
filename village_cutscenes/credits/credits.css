@@ -9,7 +9,8 @@
 
 html, body {
   height: 100vh;
-  background: #000000
+  background: #000000;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -21,7 +22,7 @@ html, body {
   font: 300 30px/1 'EB Garamond', serif;
   text-align: center;
   color: #fff;
-  animation: 140s credits linear infinite;
+  animation: 155s credits linear infinite;
   animation-delay: 3s;
   animation-fill-mode: forwards;
 }
