@@ -22,7 +22,6 @@ html, body {
   text-align: center;
   color: #fff;
   animation: 150s credits linear 1;
-  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 
