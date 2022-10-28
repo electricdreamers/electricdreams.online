@@ -21,7 +21,7 @@ html, body {
   font: 300 30px/1 'EB Garamond', serif;
   text-align: center;
   color: #fff;
-  animation: 165s credits linear 1;
+  animation: 152s credits linear 1;
   animation-delay: 2s;
   animation-fill-mode: forwards;
 }
