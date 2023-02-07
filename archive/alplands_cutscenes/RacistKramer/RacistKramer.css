@@ -1,0 +1,13 @@
+body, html {
+    background-color: #060606;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+iframe, video, embed {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
