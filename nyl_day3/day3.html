@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Day 3</title>
+  <link rel="stylesheet" type="text/css" href="./day3.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+</head>
+
+<body>
+  <script>
+      $(function(){
+    var medias = {
+        audio: Popcorn("#audio"),
+        video: Popcorn("#video")
+      },
+      loadCount = 0,
+      events = "play pause timeupdate seeking volumechange".split(/\s+/g); 
+    
+    
+    // iterate both media sources
+    Popcorn.forEach(medias, function(media, type) {
+    
+      // when each is ready... 
+      media.on("canplayall", function() {
+    
+        // trigger a custom "sync" event
+        this.emit("sync");
+    
+        // Listen for the custom sync event...    
+      }).on("sync", function() {
+    
+        // Once both items are loaded, sync events
+        if (++loadCount == 2) {
+          // Uncomment this line to silence the video
+          //medias.video.mute();
+    
+          // Iterate all events and trigger them on the video 
+          // whenever they occur on the audio
+          events.forEach(function(event) {
+    
+            medias.video.on(event, function() {
+    
+              // Avoid overkill events, trigger timeupdate manually
+              if (event === "timeupdate") {
+    
+                if (!this.media.paused) {
+                  return;
+                }
+                medias.audio.emit("timeupdate");
+    
+                return;
+              }
+    
+              if (event === "seeking") {
+                  medias.audio.currentTime(this.currentTime());
+              }
+              
+              if (event === "volumechange") {  
+            	  if(this.muted()) { 
+            		  medias.audio.mute(); 
+            	  } else {
+            		  medias.audio.unmute(); 
+            	  } 
+            	  
+            	  medias.audio.volume(this.volume());
+              }
+    
+              if (event === "play" || event === "pause") {
+                medias.audio[event]();
+              }
+            });
+          });
+        }
+      });
+    });
+    });
+  </script>
+
+  <video autoplay muted preload id="video">
+    <source src="day3.mp4" type="video/mp4">
+    <source src="day3.webm" type="video/webm">
+  </video>
+  <audio autoplay preload id="audio"><source src="day3.ogg" type="audio/ogg"></audio>
+</body>
+</html>
