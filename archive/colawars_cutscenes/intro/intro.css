@@ -1,13 +1,3 @@
-body, html {
-    background-color: #000000;
-	height: 100%;
-	width: 100%;
-	margin: 0;
-}
-
-iframe, video, embed {
-    display: block;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-  }
+version https://git-lfs.github.com/spec/v1
+oid sha256:02d153b672613050e0ac704b4794bc640aca988bde40d8f1c89a7e5900fd3fc6
+size 189
