@@ -1,3 +1,74 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:23232e7ee8be1e827ec67d70f930331016e43560ed3ec574c086ff23e2f515d1
-size 1170
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  background: #000000;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font: 300 30px/1 'Courier Prime', monospace;
+  text-align: center;
+  color: #fff;
+  animation: 140s credits linear 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font: 300 30px/1 'Courier Prime', monospace;
+  text-align: center;
+  color: #ffcc00;
+  animation: 3s fadeIn linear 1;
+  animation-delay: 101s;
+}
+
+.name {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.bigtitle {
+  color:#ffcc00;
+  margin-bottom: 20px;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.title {
+    color:#ffcc00;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color:#ffcc00;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+@keyframes credits {
+    0% { top:  100%; }
+  100% { top: -500%; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

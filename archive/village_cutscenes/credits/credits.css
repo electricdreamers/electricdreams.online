@@ -1,3 +1,74 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4533e4b860a5332471939b6db57d2d0f04af52b627670067c506944cf004b602
-size 1156
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  background: #000000;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font: 300 30px/1 'EB Garamond', serif;
+  text-align: center;
+  color: #fff;
+  animation: 140s credits linear 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font: 300 30px/1 'EB Garamond', serif;
+  text-align: center;
+  color: #ec2828;
+  animation: 3s fadeIn linear 1;
+  animation-delay: 101s;
+}
+
+.name {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.bigtitle {
+  color:#ec2828;
+  margin-bottom: 20px;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.title {
+    color:#ec2828;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color:#ec2828;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+@keyframes credits {
+    0% { top:  100%; }
+  100% { top: -500%; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
