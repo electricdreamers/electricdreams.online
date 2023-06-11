@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  background: #00000000;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font: 300 30px/1 'Kanit', serif;
+  text-align: center;
+  color: #fff;
+  animation: 140s credits linear 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.fade-in {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin: 0 auto;
+  font: 300 30px/1 'Kanit', serif;
+  text-align: center;
+  color: #414aff;
+  animation: 3s fadeIn linear 1;
+  animation-delay: 101s;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.name {
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.bigtitle {
+  color:#414aff;
+  margin-bottom: 20px;
+  font-size: 70px;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.title {
+    color:#414aff;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+.subtitle {
+    color:#414aff;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+@keyframes credits {
+    0% { top:  100%; }
+  100% { top: -500%; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
