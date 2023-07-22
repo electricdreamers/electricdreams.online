@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Day 3</title>
+        <link rel="stylesheet" type="text/css" href="./day3.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $(function () {
+                var medias = {
+                        audio: Popcorn("#audio"),
+                        video: Popcorn("#video"),
+                    },
+                    loadCount = 0,
+                    events = "play pause timeupdate seeking volumechange".split(/\s+/g);
+                Popcorn.forEach(medias, function (media, type) {
+                    media
+                        .on("canplayall", function () {
+                            this.emit("sync");
+                        })
+                        .on("sync", function () {
+                            if (++loadCount == 2) {
+                                events.forEach(function (event) {
+                                    medias.video.on(event, function () {
+                                        if (event === "timeupdate") {
+                                            if (!this.media.paused) {
+                                                return;
+                                            }
+                                            medias.audio.emit("timeupdate");
+                                            return;
+                                        }
+                                        if (event === "seeking") {
+                                            medias.audio.currentTime(this.currentTime());
+                                        }
+                                        if (event === "volumechange") {
+                                            if (this.muted()) {
+                                                medias.audio.mute();
+                                            } else {
+                                                medias.audio.unmute();
+                                            }
+                                            medias.audio.volume(this.volume());
+                                        }
+                                        if (event === "play" || event === "pause") {
+                                            medias.audio[event]();
+                                        }
+                                    });
+                                });
+                            }
+                        });
+                });
+            });
+        </script>
+        <video muted preload id="video">
+            <source src="day3.mp4" type="video/mp4" />
+            <source src="day3.webm" type="video/webm" />
+        </video>
+        <audio preload id="audio">
+            <source src="day3.ogg" type="audio/ogg" />
+        </audio>
+    </body>
+</html>
