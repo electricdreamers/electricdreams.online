@@ -26,7 +26,7 @@ html, body {
   font: 300 30px/1 'National Park', monospace;
   text-align: center;
   color: #000000;
-  animation: 140s credits linear 1;
+  animation: 150s credits linear 1;
   animation-delay: 2s;
   animation-fill-mode: forwards;
 }
